@@ -1,0 +1,12 @@
+/* THIS IE HACK WILL CHANGE SETTING ON IE7*/
+
+/* HEADER YEARS NAV CORRECTIONS */
+div#topBar div#years ul li { display: inline-table; float: left; width: 84px;}
+div#topBar div#years ul li.lastYear {  border-right: 0;}
+div#topBar div#years {  border-right: 1px solid #3d3d3d; margin-left: 4px;}
+
+
+/* CORRECTING HEADER POSITIONED ISSUES */
+div#header { position: fixed; margin: 0; left: 0; }
+/* CORRECTING SIDEBAR NAV POSITIONING ISSUES  */
+div#sidebar ul#sidebarNav { margin-left: -370px; }

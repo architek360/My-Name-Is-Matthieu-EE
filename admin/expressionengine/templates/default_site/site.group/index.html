@@ -1,0 +1,126 @@
+
+			{embed="site/header"} <!-- Start of wrap (wraps all content) -->
+		<div id="wrap">
+			<!-- Start of Wrap Header -->
+			<div id="wrapHeader">
+				<!-- Header starts here - This is fixed to the top of the window -->
+				<div id="header">
+					<!-- 960gs div -->
+					<div class="container_24">
+						<div id="topBar">
+							<!-- Years on the top goes here -->
+							<div class="grid_13" id="years">
+								<ul id="yearsNav">
+									<?php $currentYear = date('Y'); 
+										for ($i = 5; $i >= 0; $i--) {
+											echo '<li class="yearsLi">' . ($currentYear - $i) . '</li>';
+										}
+									?>
+								</ul>
+							</div><!-- end of years nav -->
+							<!-- Hire Me text goes here -->
+							<div class="grid_11" id="topBarRight">
+								<h2>
+									{my_current_position} <em>/ {my_current_city}</em>
+								</h2>
+							</div><!-- end of hire me text div-->
+						</div><!-- Below the dark bar, but still the header - Starts here -->
+						<div id="information">
+							<!-- important contact info here -->
+							<div class="grid_13" id="info">
+								<a href="{my_pdf_resume_url}" title="My Resume / PDF file" id="pdfresume" name="pdfresume"></a>
+								<h2>
+									{my_email}<br>
+									<em>{my_current_address}</em><br>
+									<em>Ph: {my_current_phone_number}</em>
+								</h2>
+							</div><!-- Your name should go here -->
+							<div class="grid_11" id="name">
+								<h1>
+									<a href="#wrap">{my_first_name}<br>
+									<em>{my_last_name}</em></a>
+								</h1>
+							</div>
+						</div><!-- / end of header ( white part ) -->
+					</div><!-- 960gs div end here -->
+				</div><!-- Header ends here -->
+			</div><!-- End of Wrap Header DIV /// -->
+			<!-- ////////////////////////// --><!-- //////////////////////////// --><!--  START OF CONTENT WRAP DIV   -->
+			<div id="wrapContet" class="container_24">
+				<!-- //////////////////////////// --><!-- START OF THE JOB CONTENT DIV -->
+				<div id="content" class="grid_13">
+					<!-- ////////////////////////////////////////////////////////////////-->
+					<!-- /////////////  LIST OF JOBS / PROJECTS AND MORE   //////////////-->
+					<!-- ////////////////////////////////////////////////////////////////-->
+					<ul id="socialLinks">
+						<li>
+							<a id='maps' href='{my_maps_resume_url}' title="My Google Maps Resume" target="_blank" name="maps">My Google Maps Resume</a>
+						</li>
+						<li>
+							<a id='twitter' href='{my_twitter_account_url}' title='My Twitter Page' class="png" target="_blank" name="twitter">My Twitter Page</a>
+						</li>
+						<li>
+							<a id='facebook' href='{my_facebook_profile_url}' title='My Facebook Page' class="png" target="_blank" name="facebook">My Facebook Page</a>
+						</li>
+						<li>
+							<a id='github' href='{my_github_profile_url}' title="My GitHub Page" class="png" target="_blank" name="github">My GitHub Page</a>
+						</li>
+						<li>
+							<a id='delicious' href='{my_delicious_profile_url}' title="My Delicious Page" class="png" target="_blank" name="delicious">My Delicious Page</a>
+						</li>
+						<li>
+							<a id='linkedin' href='{my_linkedin_profile_url}' title="My LinkeIn Page" class="png" target="_blank" name="linkedin">My LinkedIn Page</a>
+						</li>
+					</ul>{exp:channel:entries channel="job" orderby="job_start_year "} <!-- list of jobs 2010 -->
+					<div class="yearPanel">
+						<!-- This is a ResumeEntry -->
+						<div class="resumeEntry">
+							<div class="when grid_3">
+								<!-- date of the job -->
+								<p>
+									{job_start_year}<br>
+									<em>~{job_end_year}</em>
+								</p>
+							</div><!-- description of the job or project -->
+							<div class="description grid_9">
+								<h3>
+									<strong>{title}</strong>
+								</h3>
+								<h5>
+									{job_company_website_url}
+								</h5>{job_description}
+							</div>
+						</div>
+					</div><!-- ResumeEntry ends Here -->
+					{/exp:channel:entries} <!-- ////////////////////////////////////////////////////////////////-->
+					 <!-- /////////////////  LIST OF JOBS / ENDS HERE    /////////////////-->
+					 <!-- ////////////////////////////////////////////////////////////////-->
+				</div><!-- jobs content div ends here -->
+				<!-- ////////////////////////// -->
+				<!-- ///////////////////////// -->
+				<!-- right sidebar starts here -->
+				<div id="sidebar" class="grid_11">
+					<ul id="sidebarNav">
+						<li style="list-style: none">{exp:channel:entries channel="section" orderby="date"}
+						</li>
+						<li class="sidebarLi">
+							<a href="#section-{entry_id}">{section_menu_title}</a>
+						</li>
+						<li style="list-style: none">{/exp:channel:entries}
+						</li>
+					</ul>
+					<div id="sidebarContent" class="grid_10">
+						{exp:channel:entries channel="section" orderby="date"}
+						<div id="section-{entry_id}" class="sidebarPanel">
+							<h4>
+								{title}
+							</h4>{section_content}
+						</div>{/exp:channel:entries}
+					</div>
+				</div><!-- end of the right sidebar -->
+				<!-- ///////////////////////// -->
+			</div><!-- End of wrapContent DIV -->
+			<!-- ///////////////////////// -->
+		</div><!--/////// END OF WRAP DIV -->
+		<!-- ///////////////////////// -->
+			{footer}
