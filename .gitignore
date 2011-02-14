@@ -3,6 +3,7 @@
 .idea/*
 
 #config files
-admin/expressionengine/config/config.php
-admin/expressionengine/config/database.php
+/system/expressionengine/config/
+!/system/expressionengine/config/config.php
+!/system/expressionengine/config/database.php
 admin/expressionengine/cache/*
