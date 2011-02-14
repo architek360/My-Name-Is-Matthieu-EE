@@ -1,0 +1,8 @@
+#os or program files
+.DS store
+.idea/*
+
+#config files
+admin/expressionengine/config/config.php
+admin/expressionengine/config/database.php
+admin/expressionengine/cache/*
